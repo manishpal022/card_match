@@ -18,3 +18,5 @@ starlette==0.13.6
 toml==0.10.2
 urllib3==1.26.3
 uvicorn==0.13.3
+wrapt==1.12.1
+wsproto==1.0.0
