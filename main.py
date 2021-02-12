@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from typing import Optional
 import card_match
 
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -35,13 +35,14 @@ def move(request: Request, row_: Optional[int] = None, col_: Optional[int] = Non
     else:
         your_move = pl.pcard
 
-    return templates.TemplateResponse('home.html', {'request': request, 'elements': flatten_list(your_move), 'count': pl.count} )
+    return templates.TemplateResponse('home.html', {'request': request, 'elements': flatten_list(your_move), 'elements2': flatten_list(flatten_list(your_move)), 'count': pl.count} )
     # return your_move
 
 
 @app.get('/reset_game', response_class=HTMLResponse)
 def reset(request: Request):
     pl.start()
+    return RedirectResponse('/')
     # return templates.TemplateResponse('home.html', context={'request': request})
     # return your_move
 
