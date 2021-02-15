@@ -13,7 +13,7 @@
       width: 80px;
       height: 110px;
       border: 2px solid black;
-      margin: .1em;
+      margin-right: -20px;
       background-color: cornflowerblue;
       padding-left: 2px;
     }
@@ -22,7 +22,7 @@
       width: 80px;
       height: 110px;
       border: 2px solid black;
-      margin: .1em;
+      margin-right: -20px;
       padding-left: 1px;
     }
   </style>
@@ -36,8 +36,8 @@
   <!-- <h1 style = "font-weight: bold; font-size:30px;">Card Match game</h1> -->
 
 
-  <a style="display: inline;" href="http://127.0.0.1:8000/reset_game"><img
-      src="{{ url_for('static', path='/reset_game.jpg') }}" width="90" height="80"></img></a>
+  <a style="display: inline;" href="{{ url_for('reset') }}"><img src="{{ url_for('static', path='/reset_game.jpg') }}"
+      width="90" height="80"></img></a>
 
   <h1 style="text-align:left;float:left;font-weight: bold; font-size:18px; 
 display: inline; color: forestgreen;">Your Clicks: {{ count }}</h1>
@@ -51,12 +51,12 @@ display: inline; color: forestgreen;">Your Clicks: {{ count }}</h1>
         {% for column in row %}
         <div class="column">
           {% if column[0] == 'X' %}
-          <!-- <a href="http://127.0.0.1:8000/?row_={{column[1]}}&col_={{column[2]}}"><p class="notification is-danger">{{ column[0] }}</p></a> -->
-          <a href="http://127.0.0.1:8000/?row_={{column[1]}}&col_={{column[2]}}">
+            
+          <a href="https://playcard-match-game.herokuapp.com//?row_={{column[1]}}&col_={{column[2]}}">
             <div id="example1"></div>
           </a>
           {% elif column[0] != 'X' %}
-          <a href="http://127.0.0.1:8000/?row_={{column[1]}}&col_={{column[2]}}">
+          <a href="https://playcard-match-game.herokuapp.com//?row_={{column[1]}}&col_={{column[2]}}">
             <div id="example2">
               <h1 style="width:100%; text-align: center; padding: -20px; font-size: 5em;">{{ column[0] }}</h1>
             </div>

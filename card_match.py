@@ -32,6 +32,7 @@ class PlayingCards:
             [['X', 1, 0], ['X', 1, 1], ['X', 1, 2], ['X', 1, 3]],
             [['X', 2, 0], ['X', 2, 1], ['X', 2, 2], ['X', 2, 3]],
         ]
+        self.count = 0
 
 
     def click(self, row_: int, col_: int):
