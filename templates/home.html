@@ -52,11 +52,11 @@ display: inline; color: forestgreen;">Your Clicks: {{ count }}</h1>
         <div class="column">
           {% if column[0] == 'X' %}
             
-          <a href="https://playcard-match-game.herokuapp.com//?row_={{column[1]}}&col_={{column[2]}}">
+          <a href="https://playcard-match-game.herokuapp.com/?row_={{column[1]}}&col_={{column[2]}}">
             <div id="example1"></div>
           </a>
           {% elif column[0] != 'X' %}
-          <a href="https://playcard-match-game.herokuapp.com//?row_={{column[1]}}&col_={{column[2]}}">
+          <a href="https://playcard-match-game.herokuapp.com/?row_={{column[1]}}&col_={{column[2]}}">
             <div id="example2">
               <h1 style="width:100%; text-align: center; padding: -20px; font-size: 5em;">{{ column[0] }}</h1>
             </div>
